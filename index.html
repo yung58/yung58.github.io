@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yung-Ying Chen</title>
+<meta name="description" content="Yung-Ying Chen — Physics Ph.D. student at Georgia Tech studying how network connectivity shapes the latent structure of neural dynamics and learning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF9F5; --card:#EEF0EB; --ink:#2D332E; --muted:#5E655F; --sage:#4F6D5E;
+  --rose:#D99A8B; --rose-dark:#A0584B; --line:#DDE1D9; --line2:#CFD5CB; --sepia:#8B6F4E;
+  --serif:'Cormorant Garamond', Georgia, serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter, system-ui, sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--ink);text-underline-offset:4px;text-decoration-thickness:1px}
+a:hover{color:var(--rose-dark)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px 48px;display:flex;flex-direction:column}
+
+/* header */
+header{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:12px;padding:20px 0;border-bottom:1px solid var(--line)}
+nav{display:flex;flex-wrap:wrap;gap:4px 22px;align-items:center}
+.navlink{padding:10px 0;color:var(--muted);font-size:14px;text-decoration:none;background-image:linear-gradient(var(--rose),var(--rose));background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size 220ms ease,color 160ms ease}
+.navlink:hover{background-size:100% 1px;color:var(--ink)}
+.btn{display:inline-block;padding:9px 16px;border:1px solid var(--rose);background:var(--rose);color:var(--ink);border-radius:4px;font-size:14px;text-decoration:none;transition:background 160ms ease,color 160ms ease,border-color 160ms ease}
+.btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.outline{background:transparent;border-color:var(--ink);font-size:13px;font-weight:500}
+nav .btn{margin-left:6px;padding:10px 18px}
+
+/* sections */
+main{display:flex;flex-direction:column}
+section{display:flex;flex-direction:column;gap:28px;padding:56px 0 0}
+h2.sec{margin:0;color:var(--sage);font-family:var(--serif);font-size:clamp(40px,4.6vw,60px);font-weight:500;line-height:1}
+
+/* hero */
+.hero{flex-direction:row;flex-wrap:wrap;gap:48px 64px;align-items:stretch;padding:64px 0 24px}
+.hero-text{flex:3 1 540px;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:28px}
+.hero h1{margin:0;font-family:Caveat, cursive;font-size:100px;font-weight:600;line-height:0.85;color:var(--ink);max-width:740px;min-height:136px}
+.tagline{margin:0;max-width:660px;font-family:Arial, sans-serif;font-size:25px;line-height:1.35;font-weight:700}
+.about-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin:8px 0 -14px}
+.about-row h2{margin:0;color:var(--sage);font-family:var(--serif);font-size:59px;font-weight:500;line-height:1}
+.bio{margin:0;max-width:660px;font-family:Arial, sans-serif;font-size:20px;line-height:1.35}
+.hero figure{flex:2 1 340px;min-width:0;margin:0;display:flex}
+.hero figure img{flex:1 1 auto;width:100%;min-height:460px;max-height:560px;object-fit:cover;object-position:30% 55%;display:block;background:var(--card)}
+
+/* research */
+.tags{display:flex;flex-wrap:wrap;gap:10px;padding:3px}
+.tag{padding:6px 14px;border:1px solid var(--line2);border-radius:3px;font-size:14px;background:var(--card)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.card{background:var(--card);border:1px solid var(--line);padding:32px;display:flex;flex-direction:column;gap:16px}
+.card h3{margin:0;font-family:var(--serif);font-size:28px;font-weight:600;line-height:1.15}
+.card p{margin:0;color:var(--muted);font-size:16px;line-height:1.65}
+
+/* news */
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px}
+.hint{font-size:13px;color:var(--muted)}
+.newsbox{max-height:292px;overflow-y:auto;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding-right:8px;scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
+.newsbox ul{margin:0;padding:0;list-style:none}
+.newsbox li{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 24px;padding:18px 0;border-bottom:1px solid var(--line)}
+.newsbox li:last-child{border-bottom:0}
+.n-date{flex:0 0 92px;font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.3;color:var(--sage)}
+.n-kind{flex:0 0 104px}
+.pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:0.04em}
+.k-award{background:#F6E3DD;color:#8E4A3E}.k-poster{background:#E8E4EE;color:#5A4B6E}.k-paper{background:#DDE7E1;color:#3E5A4C}
+.k-milestone{background:#F1EEE6;color:#6B5A3A}.k-fellow{background:#F0E4E1;color:#85514A}.k-schol{background:#E1E7EC;color:#43596B}
+.n-title{flex:2 1 300px;min-width:0;font-size:16px;font-weight:500}
+.n-org{flex:1 1 240px;min-width:0;font-size:14px;color:var(--muted)}
+
+/* papers */
+.papers-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px}
+.pager{display:flex;align-items:center;gap:10px;margin-left:auto}
+.counter{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--muted);font-variant-numeric:tabular-nums;margin-right:6px}
+.round{width:44px;height:44px;border-radius:50%;border:1px solid var(--ink);background:transparent;color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+.round.fill{border-color:var(--rose);background:var(--rose)}
+.feature{display:flex;flex-wrap:wrap;gap:36px;align-items:stretch}
+.feature-fig{flex:3 1 460px;min-width:0;padding:14px;background:var(--card);border:1px solid var(--line)}
+.feature-fig img,.feature-fig .art{display:block;width:100%;aspect-ratio:16/10;border:1px solid var(--line2)}
+.feature-fig img{object-fit:contain;background:#fff}
+.feature-body{flex:2 1 320px;min-width:0;display:flex;flex-direction:column;gap:14px;padding:8px 0}
+.venue-row{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline}
+.venue{padding:2px 10px;border:1px solid var(--sage);color:var(--sage);font-size:12px;font-weight:600;letter-spacing:0.08em}
+.kind{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--muted)}
+.feature-body h3{margin:0;font-family:var(--serif);font-size:30px;font-weight:600;line-height:1.15}
+.authors{margin:0;font-size:14px;color:var(--muted)}
+.authors strong{font-weight:600;color:var(--ink)}
+.cite{margin:0;font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.5}
+.note{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--sage)}
+.feature-body .actions{margin-top:auto;padding-top:8px}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;padding-top:8px;border-top:1px solid var(--line)}
+.thumb{display:flex;flex-direction:column;gap:8px;padding:8px;border:1px solid var(--line);border-radius:2px;background:transparent;cursor:pointer;text-align:left;font:inherit;color:var(--ink);opacity:0.72;transition:transform 200ms ease,opacity 200ms ease}
+.thumb:hover{transform:translateY(-3px);opacity:1}
+.thumb[aria-pressed="true"]{border-color:var(--rose);background:var(--card);opacity:1}
+.thumb img,.thumb .art{display:block;width:100%;aspect-ratio:16/10}
+.thumb img{object-fit:cover;background:#fff}
+.thumb-meta{display:flex;justify-content:space-between;gap:8px;font-size:12px}
+.thumb-meta b{font-weight:600;letter-spacing:0.06em}
+.thumb-meta i{font-family:var(--serif);font-size:14px;color:var(--muted)}
+.scholar{align-self:flex-start;font-size:14px;color:var(--muted)}
+
+/* teaching */
+.tcard{background:var(--card);border:1px solid var(--line);padding:28px 32px;display:flex;flex-direction:column;gap:4px}
+.tcard h3{margin:0 0 8px;font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.15}
+.tcard ul{margin:0;padding:0;list-style:none}
+.tcard li{display:flex;flex-direction:column;gap:2px;padding:14px 0;border-top:1px solid var(--line)}
+.t-term{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--sage)}
+.t-course{font-size:16px;font-weight:500}
+.t-course span{color:var(--muted);font-weight:400}
+.t-role{font-size:14px;color:var(--muted)}
+
+/* connect */
+#connect{gap:24px;padding:56px 0 24px}
+.graph{position:relative;width:100%;aspect-ratio:1000/440;min-height:420px;background:var(--card);border:1px solid var(--line)}
+.graph svg{position:absolute;inset:0;width:100%;height:100%}
+.me{position:absolute;left:51%;top:48.9%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:var(--bg);border:1.5px solid var(--sepia);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:22px;font-weight:500}
+.aff{position:absolute;font-family:var(--serif);font-style:italic;font-size:17px;color:var(--muted);white-space:nowrap}
+.node{position:absolute;transform:translate(-11px,-50%);display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 14px 0 0;text-decoration:none;transition:transform 180ms ease}
+.node:hover{transform:translate(-11px,-50%) scale(1.05)}
+.node .dot{flex:none;width:22px;height:22px;border-radius:50%;border:2px solid var(--card);box-shadow:0 0 0 1px var(--sepia)}
+.node .lbl{padding:6px 12px;background:var(--bg);border:1px solid var(--line);font-size:14px;font-weight:600}
+
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:11px;padding:24px 0 8px;color:var(--muted);font-size:12px}
+footer i{font-family:var(--serif);font-size:13px;color:var(--sage)}
+
+/* phones */
+@media (max-width:760px){
+  .hero h1{font-size:72px;min-height:0}
+  .tagline{font-size:21px}
+  .about-row h2{font-size:44px}
+  .bio{font-size:18px}
+  .hero figure img{min-height:360px}
+  .graph{aspect-ratio:auto;min-height:520px}
+  .aff{font-size:15px}
+  .aff.wide{white-space:normal;max-width:45%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important;scroll-behavior:auto !important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+<nav aria-label="Primary">
+<a class="navlink" href="#about">About</a>
+<a class="navlink" href="#research">Research</a>
+<a class="navlink" href="#news">News</a>
+<a class="navlink" href="#papers">Papers</a>
+<a class="navlink" href="#teaching">Teaching</a>
+<a class="btn" href="#connect">Get in touch</a>
+</nav>
+</header>
+
+<main id="top">
+
+<section class="hero" aria-labelledby="page-title">
+<div class="hero-text">
+<h1 id="page-title">Yung-Ying Chen</h1>
+<p class="tagline">I study how network connectivity shapes the latent structures of neural dynamics and how these structures support learning in brains and machines.</p>
+<div class="about-row">
+<h2 id="about">About</h2>
+<a class="btn" href="files/Yung-Ying_Chen_CV.pdf" target="_blank" rel="noopener">CV ↗</a>
+</div>
+<p class="bio">I am a third-year Physics Ph.D. student at Georgia Institute of Technology, advised by <a href="https://physics.gatech.edu/user/audrey-sederberg">Audrey Sederberg</a>. My background is in computational neuroscience, vision science, and quantitative biophysics. Previously, I received an M.S. in Biomedical Engineering from Carnegie Mellon University, where I worked with <a href="https://www.cnbc.cmu.edu/~tai/">Tai-Sing Lee</a> at the Center for the Neural Basis of Cognition (CNBC).</p>
+</div>
+<figure>
+<img src="images/portrait.jpg" alt="Yung-Ying Chen smiling under cherry blossoms by the Tidal Basin, with the Jefferson Memorial behind">
+</figure>
+</section>
+
+<section id="research" aria-labelledby="research-title" style="padding-top:48px">
+<h2 class="sec" id="research-title">Research interests</h2>
+<div class="tags">
+<span class="tag">Neural population dynamics</span><span class="tag">Criticality &amp; scaling laws</span><span class="tag">Latent structures</span><span class="tag">connectivity</span><span class="tag">Recurrent neural networks</span><span class="tag">Machine learning</span>
+</div>
+<div class="grid2">
+<article class="card">
+<svg aria-hidden="true" width="160" height="110" viewBox="0 0 160 110" fill="none" stroke="#8B6F4E" stroke-width="1" stroke-linecap="round">
+<path d="M30 32Q54 20 80 20"></path>
+<path d="M80 20Q106 24 128 42"></path>
+<path d="M80 20Q98 54 112 84"></path>
+<path d="M52 82Q82 90 112 84"></path>
+<path d="M31 33Q55 22 80 22M81 22Q99 55 113 85" stroke-width="0.5" stroke-opacity="0.45"></path>
+<circle cx="30" cy="32" r="7" fill="#EEF0EB"></circle>
+<circle cx="80" cy="20" r="7" fill="#EEF0EB"></circle>
+<circle cx="128" cy="42" r="7" fill="#EEF0EB"></circle>
+<circle cx="52" cy="82" r="7" fill="#EEF0EB"></circle>
+<circle cx="112" cy="84" r="7" fill="#EEF0EB"></circle>
+<path d="M76 22l6-6M77 25l6-6M108 86l6-6M109 89l6-6" stroke-width="0.6"></path>
+<text x="2" y="106" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="9" fill="#8B6F4E" stroke="none">N = 5,  p = 0.3</text>
+</svg>
+<h3>Latent structure for learning</h3>
+<p>Connectivity constrains neural dynamics to low-dimensional latent structures that shape learning. I study this link in brains and artificial networks, using structure measured in the brain to design initializations that help artificial networks learn efficiently.</p>
+</article>
+<article class="card">
+<svg aria-hidden="true" width="160" height="110" viewBox="0 0 160 110" fill="none" stroke="#8B6F4E" stroke-width="1" stroke-linecap="round">
+<path d="M20 8V92H150"></path>
+<path d="M20 30h-4M20 56h-4M20 82h-4M46 92v4M72 92v4M98 92v4M124 92v4"></path>
+<path d="M28 18L140 84" stroke-dasharray="3 3"></path>
+<circle cx="32" cy="22" r="2.4"></circle><circle cx="44" cy="27" r="2.4"></circle><circle cx="57" cy="36" r="2.4"></circle><circle cx="70" cy="42" r="2.4"></circle><circle cx="84" cy="52" r="2.4"></circle><circle cx="98" cy="58" r="2.4"></circle><circle cx="112" cy="68" r="2.4"></circle><circle cx="126" cy="74" r="2.4"></circle><circle cx="138" cy="83" r="2.4"></circle>
+<text x="92" y="30" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="9" fill="#8B6F4E" stroke="none">λ ∝ n^−α</text>
+<text x="118" y="106" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="8" fill="#8B6F4E" stroke="none">log n</text>
+</svg>
+<h3>Power-Law Scaling and Brain Function</h3>
+<p>Power-law scaling describes complex neural dynamics in a simple but informative form. I leverage a statistical latent variable model that links a small number of latent variables to the observed power laws, as a way to understand how brain function emerges.</p>
+</article>
+</div>
+</section>
+
+<section id="news" aria-labelledby="news-title">
+<div class="sec-head">
+<h2 class="sec" id="news-title">News</h2>
+<span class="hint">Scroll for more ↓</span>
+</div>
+<div class="newsbox" tabindex="0" role="region" aria-label="News, scrollable">
+<ul>
+<li><span class="n-date">Sep 2026</span><span class="n-kind"><span class="pill k-award">Award</span></span><span class="n-title">AI4Science Seed Funding</span><span class="n-org">College of Science, Georgia Institute of Technology</span></li>
+<li><span class="n-date">Sep 2026</span><span class="n-kind"><span class="pill k-poster">Poster</span></span><span class="n-title">Poster presentation at the Kempner Institute</span><span class="n-org">Learning Dynamics in Natural &amp; Artificial Intelligence</span></li>
+<li><span class="n-date">Aug 2026</span><span class="n-kind"><span class="pill k-poster">Poster</span></span><span class="n-title">Poster presentation at the NIH BRAIN Initiative Conference</span><span class="n-org">NIH BRAIN Initiative</span></li>
+<li><span class="n-date">Apr 2026</span><span class="n-kind"><span class="pill k-paper">Paper</span></span><span class="n-title"><a href="#papers">Power Laws in Empirical Eigenvalue Spectra</a></span><span class="n-org">Published in <em>Entropy</em> · co-first author</span></li>
+<li><span class="n-date">Mar 2026</span><span class="n-kind"><span class="pill k-award">Award</span></span><span class="n-title">Conference Travel Funding</span><span class="n-org">Student Government Association, Georgia Tech</span></li>
+<li><span class="n-date">Mar 2026</span><span class="n-kind"><span class="pill k-award">Award</span></span><span class="n-title">Travel Award</span><span class="n-org">School of Physics, Georgia Tech</span></li>
+<li><span class="n-date">Aug 2024</span><span class="n-kind"><span class="pill k-milestone">Milestone</span></span><span class="n-title">Started Ph.D. in Physics</span><span class="n-org">Georgia Institute of Technology</span></li>
+<li><span class="n-date">May 2024</span><span class="n-kind"><span class="pill k-milestone">Milestone</span></span><span class="n-title">Received M.S. in Biomedical Engineering</span><span class="n-org">Carnegie Mellon University</span></li>
+<li><span class="n-date">Apr 2024</span><span class="n-kind"><span class="pill k-milestone">Milestone</span></span><span class="n-title">M.S. thesis defense</span><span class="n-org">Carnegie Mellon University</span></li>
+<li><span class="n-date">Aug 2022</span><span class="n-kind"><span class="pill k-fellow">Fellowship</span></span><span class="n-title">Department Head’s Fellowship</span><span class="n-org">Biomedical Engineering, Carnegie Mellon University</span></li>
+<li><span class="n-date">2020</span><span class="n-kind"><span class="pill k-schol">Scholarship</span></span><span class="n-title">Undergraduate Research Scholarship</span><span class="n-org">Academia Sinica, Institute of Astronomy and Astrophysics</span></li>
+</ul>
+</div>
+</section>
+
+<section id="papers" aria-labelledby="papers-title">
+<div class="papers-head">
+<h2 class="sec" id="papers-title">Peer Review Papers / Conference</h2>
+<div class="pager">
+<span class="counter" id="counter">01 / 06</span>
+<button type="button" class="round" id="prev" aria-label="Previous paper"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<button type="button" class="round fill" id="next" aria-label="Next paper"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+<article class="feature" aria-live="polite">
+<div class="feature-fig" id="f-fig"></div>
+<div class="feature-body">
+<div class="venue-row"><span class="venue" id="f-venue"></span><span class="kind" id="f-kind"></span></div>
+<h3 id="f-title"></h3>
+<p class="authors" id="f-authors"></p>
+<p class="cite" id="f-cite"></p>
+<span class="note" id="f-note"></span>
+<div class="actions"><a class="btn outline" id="f-link" href="#" target="_blank" rel="noopener"></a></div>
+</div>
+</article>
+<div class="thumbs" role="group" aria-label="Choose a paper" id="thumbs"></div>
+<a class="scholar" href="https://scholar.google.com/citations?user=ch9TAQMAAAAJ" target="_blank" rel="noopener">All publications on Google Scholar ↗</a>
+</section>
+
+<section id="teaching" aria-labelledby="teaching-title">
+<h2 class="sec" id="teaching-title">Teaching</h2>
+<div class="grid2" style="grid-template-columns:repeat(auto-fit,minmax(340px,1fr))">
+<div class="tcard">
+<h3>Georgia Institute of Technology</h3>
+<ul>
+<li><span class="t-term">Fall 2026</span><span class="t-course">Foundations of Quantitative Biosciences <span>(PHYS 6750)</span></span><span class="t-role">Teaching Assistant</span></li>
+<li><span class="t-term">Fall 2024, Spring 2025</span><span class="t-course">Intro Physics II <span>(PHYS 2212)</span></span><span class="t-role">Teaching Assistant</span></li>
+</ul>
+</div>
+<div class="tcard">
+<h3>Carnegie Mellon University</h3>
+<ul>
+<li><span class="t-term">Spring 2024</span><span class="t-course">Neural Computation <span>(CS 15-386/686)</span></span><span class="t-role">Teaching Assistant</span></li>
+<li><span class="t-term">Spring 2023</span><span class="t-course">Professional Issues in Biomedical Engineering <span>(BME 42-201/42-781)</span></span><span class="t-role">Teaching Assistant</span></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="connect" aria-labelledby="connect-title">
+<h2 class="sec" id="connect-title">Let’s connect</h2>
+<div class="graph">
+<svg aria-hidden="true" viewBox="0 0 1000 440" preserveAspectRatio="none">
+<g fill="none" stroke="#8B6F4E" stroke-linecap="round">
+<path d="M510 215Q323 156 150 120" stroke-width="1.4" stroke-opacity="0.85"></path>
+<path d="M512 216Q326 154 152 122" stroke-width="0.6" stroke-opacity="0.4"></path>
+<path d="M510 215Q467 138 430 80" stroke-width="1.4" stroke-opacity="0.85"></path>
+<path d="M512 216Q470 136 432 82" stroke-width="0.6" stroke-opacity="0.4"></path>
+<path d="M510 215Q402 286 270 340" stroke-width="1.4" stroke-opacity="0.85"></path>
+<path d="M512 216Q405 284 272 342" stroke-width="0.6" stroke-opacity="0.4"></path>
+<path d="M510 215Q592 275 660 350" stroke-width="1.4" stroke-opacity="0.85"></path>
+<path d="M512 216Q595 273 662 352" stroke-width="0.6" stroke-opacity="0.4"></path>
+</g>
+<g fill="none" stroke="#8B6F4E" stroke-linecap="round">
+<path d="M510 215Q556 150 590 105" stroke-width="1" stroke-opacity="0.6"></path>
+<path d="M510 215Q470 262 420 295" stroke-width="1" stroke-opacity="0.6"></path>
+<path d="M510 215Q700 222 870 250" stroke-width="1" stroke-opacity="0.6"></path>
+<path d="M510 215Q300 214 90 240" stroke-width="1" stroke-opacity="0.6"></path>
+<path d="M510 215Q280 300 70 400" stroke-width="1" stroke-opacity="0.6"></path>
+<circle cx="590" cy="105" r="6" fill="#EEF0EB" stroke-width="1"></circle>
+<circle cx="420" cy="295" r="6" fill="#EEF0EB" stroke-width="1"></circle>
+<circle cx="870" cy="250" r="6" fill="#EEF0EB" stroke-width="1"></circle>
+<circle cx="90" cy="240" r="6" fill="#EEF0EB" stroke-width="1"></circle>
+<circle cx="70" cy="400" r="6" fill="#EEF0EB" stroke-width="1"></circle>
+</g>
+</svg>
+<span class="me">me</span>
+<span class="aff" style="left:60%;top:23.9%;transform:translate(12px,-50%)">GaTech Physics</span>
+<span class="aff" style="left:42%;top:67%;transform:translate(12px,-50%)">MaTRIX Lab</span>
+<span class="aff wide" style="left:87%;top:56.8%;transform:translate(-100%,calc(-100% - 10px));text-align:right;line-height:1.2;white-space:normal">Taiwanese Student Association (TSA)<br><span style="font-size:15px">Board member</span></span>
+<span class="aff" style="left:9%;top:54.5%;transform:translate(-8px,12px)">GaTech AI4Science</span>
+<span class="aff wide" style="left:7%;top:90.9%;transform:translate(12px,-50%)">GaTech Cognition and Brain Science</span>
+<a class="node" href="mailto:yyc@gatech.edu" style="left:15%;top:27.3%"><span class="dot" aria-hidden="true" style="background:#4F6D5E"></span><span class="lbl">Email ↗</span></a>
+<a class="node" href="https://scholar.google.com/citations?user=ch9TAQMAAAAJ" target="_blank" rel="noopener" style="left:43%;top:18.2%"><span class="dot" aria-hidden="true" style="background:#D99A8B"></span><span class="lbl">Google Scholar ↗</span></a>
+<a class="node" href="https://www.linkedin.com/in/yung-ying-chen-080b56186" target="_blank" rel="noopener" style="left:27%;top:77.3%"><span class="dot" aria-hidden="true" style="background:#C9AAA0"></span><span class="lbl">LinkedIn ↗</span></a>
+<a class="node" href="files/Yung-Ying_Chen_CV.pdf" target="_blank" rel="noopener" style="left:66%;top:79.5%"><span class="dot" aria-hidden="true" style="background:#EBC9BE"></span><span class="lbl">CV ↗</span></a>
+</div>
+</section>
+
+</main>
+
+<footer><span>© 2026 Yung-Ying Chen</span><i>made with Claude</i></footer>
+
+</div>
+
+<script>
+(function () {
+  var PAPERS = [
+    { venue: 'ENTROPY', kind: 'Journal', year: '2026', linkLabel: 'Paper', href: 'https://www.mdpi.com/1099-4300/28/4/418',
+      title: 'Power Laws in Empirical Eigenvalue Spectra',
+      pre: 'Liu, B.; ', me: 'Chen, Y.-Y.*', post: '; Li, M.S.; Morgan, V.T.; Abdelaleem, E.; Sederberg, A.',
+      cite: 'Entropy 2026, 28, 418', note: '* co-first author',
+      img: 'images/entropy_fig2.jpg', alt: 'Fig. 2: rank scaling, stability of fit, CCDF and selection of lambda-min on a toy model' },
+    { venue: 'KEMPNER', kind: 'Conference', year: '2026', linkLabel: 'Abstract', href: '',
+      title: 'Criticality and Stereotypy Characterize Optimal Dynamical Regimes for Learning',
+      pre: '', me: 'Yung-Ying Chen', post: ', Gordon B. Smith, Audrey Sederberg',
+      cite: 'Learning Dynamics in Natural & Artificial Intelligence, Kempner Institute, Sep 2026', note: '',
+      art: 'radial-gradient(ellipse 40% 14% at 30% 70%, rgba(222,206,170,0.95), transparent 70%), radial-gradient(ellipse 36% 12% at 72% 78%, rgba(226,170,150,0.85), transparent 70%), radial-gradient(ellipse 30% 18% at 60% 25%, rgba(150,173,180,0.85), transparent 70%), radial-gradient(ellipse 14% 10% at 20% 30%, rgba(255,255,255,0.95), transparent 70%), #D3DCCF' },
+    { venue: 'NIH BRAIN', kind: 'Conference', year: '2026', linkLabel: 'Abstract', href: '',
+      title: 'Simple Origins of Complex Statistical Signatures in Neural Population Activities',
+      pre: '', me: 'Yung-Ying Chen', post: ', Seongeun Chung, Benyuan Liu, Eslam Abdelaleem, Audrey Sederberg',
+      cite: 'NIH BRAIN Initiative Conference, Aug 2026', note: '',
+      art: 'radial-gradient(ellipse 45% 20% at 50% 40%, rgba(255,240,228,0.95), transparent 70%), radial-gradient(ellipse 30% 14% at 25% 70%, rgba(110,140,140,0.8), transparent 70%), radial-gradient(ellipse 26% 12% at 75% 72%, rgba(201,170,160,0.85), transparent 70%), radial-gradient(ellipse 12% 8% at 70% 30%, rgba(222,206,170,0.9), transparent 70%), #D2DCDD' },
+    { venue: 'APS', kind: 'Conference', year: '2026', linkLabel: 'Abstract', href: 'https://meetings-archive.aps.org/smt/2026/mar-m62/4/',
+      title: 'Decoupling Stereotyped Dynamics from Criticality in Simple Neural Networks',
+      pre: '', me: 'Yung-Ying Chen', post: ', Gordon B. Smith, Audrey J. Sederberg',
+      cite: 'APS Global Physics Summit 2026, Mar 2026', note: '',
+      art: 'radial-gradient(ellipse 30% 16% at 30% 35%, rgba(217,154,139,0.9), transparent 70%), radial-gradient(ellipse 34% 14% at 70% 65%, rgba(127,155,138,0.9), transparent 70%), radial-gradient(ellipse 12% 8% at 55% 45%, rgba(222,206,170,0.95), transparent 70%), radial-gradient(ellipse 10% 7% at 25% 70%, rgba(255,255,255,0.95), transparent 70%), radial-gradient(ellipse 20% 10% at 80% 25%, rgba(201,170,160,0.85), transparent 70%), #E6DACB' },
+    { venue: 'MNRAS', kind: 'Journal', year: '2022', linkLabel: 'Paper', href: 'https://academic.oup.com/mnras/article/509/2/2258/6420258',
+      title: 'A simple numerical experiment on the dust temperature bias for Lyman break galaxies at z ∼ 5',
+      pre: '', me: 'Chen, Y.-Y.', post: ', Hirashita, H., Wang, W.-H., & Nakai, N.',
+      cite: 'Monthly Notices of the Royal Astronomical Society 509(2), 2258–2268, 2022', note: '',
+      img: 'images/mnras_fig2.jpg', alt: 'Fig. 2: dust temperature versus infrared luminosity at z = 5, 7 and 10 for ALMA Bands 9, 7 and 6' },
+    { venue: 'J. FLOW CHEM', kind: 'Journal', year: '2021', linkLabel: 'Paper', href: 'https://doi.org/10.1007/s41981-021-00153-6',
+      title: 'Scale-out production in core-annular liquid–liquid microextractor',
+      pre: 'Lin, C.-Y., ', me: 'Chen, Y.-Y.*', post: ', Chen, P.-Y., et al.',
+      cite: 'Journal of Flow Chemistry 11, 569–577, 2021', note: '* co-first author',
+      img: 'images/jflow_fig1.jpg', alt: 'Fig. 1: schematic and photographs of the CALLME, cCALLME, 2sCALLME and pCALLME setups' }
+  ];
+
+  var i = 0, timer = null;
+  var $ = function (id) { return document.getElementById(id); };
+  var pad = function (n) { return String(n).padStart(2, '0'); };
+
+  function media(p, alt) {
+    if (p.img) {
+      var im = document.createElement('img');
+      im.src = p.img; im.alt = alt; im.loading = 'lazy';
+      return im;
+    }
+    var d = document.createElement('span');
+    d.className = 'art'; d.setAttribute('aria-hidden', 'true');
+    d.style.background = p.art;
+    return d;
+  }
+
+  // thumbnails
+  var thumbs = $('thumbs');
+  PAPERS.forEach(function (p, k) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'thumb';
+    b.setAttribute('aria-label', 'Show ' + p.title);
+    b.appendChild(media(p, ''));
+    var m = document.createElement('span'); m.className = 'thumb-meta';
+    var v = document.createElement('b'); v.textContent = p.venue;
+    var y = document.createElement('i'); y.textContent = p.year;
+    m.appendChild(v); m.appendChild(y); b.appendChild(m);
+    b.addEventListener('click', function () { go(k); });
+    thumbs.appendChild(b);
+  });
+
+  function render() {
+    var p = PAPERS[i];
+    var fig = $('f-fig'); fig.innerHTML = ''; fig.appendChild(media(p, p.alt || ''));
+    $('f-venue').textContent = p.venue;
+    $('f-kind').textContent = p.kind + ' · ' + p.year;
+    $('f-title').textContent = p.title;
+    var a = $('f-authors'); a.textContent = '';
+    a.appendChild(document.createTextNode(p.pre));
+    var s = document.createElement('strong'); s.textContent = p.me; a.appendChild(s);
+    a.appendChild(document.createTextNode(p.post));
+    $('f-cite').textContent = p.cite;
+    $('f-note').textContent = p.note;
+    $('f-note').style.display = p.note ? '' : 'none';
+    var link = $('f-link');
+    if (p.href) { link.href = p.href; link.textContent = p.linkLabel + ' ↗'; link.style.display = ''; }
+    else { link.style.display = 'none'; }
+    $('counter').textContent = pad(i + 1) + ' / ' + pad(PAPERS.length);
+    Array.prototype.forEach.call(thumbs.children, function (b, k) {
+      b.setAttribute('aria-pressed', k === i ? 'true' : 'false');
+    });
+  }
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function start() {
+    clearInterval(timer);
+    if (!reduce) timer = setInterval(function () { i = (i + 1) % PAPERS.length; render(); }, 5000);
+  }
+  function go(n) { i = (n + PAPERS.length) % PAPERS.length; render(); start(); }
+
+  $('prev').addEventListener('click', function () { go(i - 1); });
+  $('next').addEventListener('click', function () { go(i + 1); });
+  var sec = $('papers');
+  sec.addEventListener('mouseenter', function () { clearInterval(timer); });
+  sec.addEventListener('mouseleave', start);
+
+  render(); start();
+})();
+</script>
+</body>
+</html>
