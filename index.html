@@ -55,6 +55,15 @@ h2.sec{margin:0;color:var(--sage);font-family:var(--serif);font-size:clamp(40px,
 .card h3{margin:0;font-family:var(--serif);font-size:28px;font-weight:600;line-height:1.15}
 .card p{margin:0;color:var(--muted);font-size:16px;line-height:1.65}
 
+/* research meta */
+.meta{margin:-8px 0 0;display:flex;flex-direction:column;gap:6px;font-size:15px}
+.meta div{display:flex;flex-wrap:wrap;gap:4px 12px}
+.meta dt{flex:0 0 72px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--sage)}
+.meta dd{margin:0;color:var(--muted)}
+.skills{display:flex;flex-direction:column;gap:14px}
+.skill-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.skill-row .lab{flex:0 0 150px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--sage)}
+
 /* news */
 .sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 20px}
 .hint{font-size:13px;color:var(--muted)}
@@ -66,7 +75,7 @@ h2.sec{margin:0;color:var(--sage);font-family:var(--serif);font-size:clamp(40px,
 .n-kind{flex:0 0 104px}
 .pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:0.04em}
 .k-award{background:#F6E3DD;color:#8E4A3E}.k-poster{background:#E8E4EE;color:#5A4B6E}.k-paper{background:#DDE7E1;color:#3E5A4C}
-.k-milestone{background:#F1EEE6;color:#6B5A3A}.k-fellow{background:#F0E4E1;color:#85514A}.k-schol{background:#E1E7EC;color:#43596B}
+.k-milestone{background:#F1EEE6;color:#6B5A3A}.k-fellow{background:#F0E4E1;color:#85514A}.k-schol{background:#E1E7EC;color:#43596B}.k-talk{background:#E1EAEE;color:#3D5A66}
 .n-title{flex:2 1 300px;min-width:0;font-size:16px;font-weight:500}
 .n-org{flex:1 1 240px;min-width:0;font-size:14px;color:var(--muted)}
 
@@ -158,7 +167,7 @@ footer i{font-family:var(--serif);font-size:13px;color:var(--sage)}
 <section class="hero" aria-labelledby="page-title">
 <div class="hero-text">
 <h1 id="page-title">Yung-Ying Chen</h1>
-<p class="tagline">I study how network connectivity shapes the latent structures of neural dynamics and how these structures support learning in brains and machines.</p>
+<p class="tagline">I study how network connectivity shapes the structures of neural dynamics and how these structures support learning in brains and machines.</p>
 <div class="about-row">
 <h2 id="about">About</h2>
 <a class="btn" href="files/Yung-Ying_Chen_CV.pdf" target="_blank" rel="noopener">CV ↗</a>
@@ -175,6 +184,10 @@ footer i{font-family:var(--serif);font-size:13px;color:var(--sage)}
 <div class="tags">
 <span class="tag">Neural population dynamics</span><span class="tag">Criticality &amp; scaling laws</span><span class="tag">Latent structures</span><span class="tag">connectivity</span><span class="tag">Recurrent neural networks</span><span class="tag">Machine learning</span>
 </div>
+<dl class="meta">
+<div><dt>Data</dt><dd>Neuropixels · calcium imaging · MEA · fMRI</dd></div>
+<div><dt>Species</dt><dd>Human · macaque · ferret · mouse</dd></div>
+</dl>
 <div class="grid2">
 <article class="card">
 <svg aria-hidden="true" width="160" height="110" viewBox="0 0 160 110" fill="none" stroke="#8B6F4E" stroke-width="1" stroke-linecap="round">
@@ -191,8 +204,8 @@ footer i{font-family:var(--serif);font-size:13px;color:var(--sage)}
 <path d="M76 22l6-6M77 25l6-6M108 86l6-6M109 89l6-6" stroke-width="0.6"></path>
 <text x="2" y="106" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="9" fill="#8B6F4E" stroke="none">N = 5,  p = 0.3</text>
 </svg>
-<h3>Latent structure for learning</h3>
-<p>Connectivity constrains neural dynamics to low-dimensional latent structures that shape learning. I study this link in brains and artificial networks, using structure measured in the brain to design initializations that help artificial networks learn efficiently.</p>
+<h3>Network connectivity, dynamics, and learning</h3>
+<p>How a network is wired limits the patterns of activity it can produce, shaping the network's ability to learn. I compare these patterns in real brains and in artificial neural networks, and use insights from the brain to help AI models learn faster from less data.</p>
 </article>
 <article class="card">
 <svg aria-hidden="true" width="160" height="110" viewBox="0 0 160 110" fill="none" stroke="#8B6F4E" stroke-width="1" stroke-linecap="round">
@@ -203,8 +216,8 @@ footer i{font-family:var(--serif);font-size:13px;color:var(--sage)}
 <text x="92" y="30" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="9" fill="#8B6F4E" stroke="none">λ ∝ n^−α</text>
 <text x="118" y="106" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="8" fill="#8B6F4E" stroke="none">log n</text>
 </svg>
-<h3>Power-Law Scaling and Brain Function</h3>
-<p>Power-law scaling describes complex neural dynamics in a simple but informative form. I leverage a statistical latent variable model that links a small number of latent variables to the observed power laws, as a way to understand how brain function emerges.</p>
+<h3>Simple structures hidden in complex brain activity</h3>
+<p>Brain activity is complex, but it often displays simple patterns such as power-law distributions. I apply statistical models that explain these patterns using just a few hidden variables, as a way to understand how brain function emerges from many neurons working together.</p>
 </article>
 </div>
 </section>
@@ -220,6 +233,7 @@ footer i{font-family:var(--serif);font-size:13px;color:var(--sage)}
 <li><span class="n-date">Sep 2026</span><span class="n-kind"><span class="pill k-poster">Poster</span></span><span class="n-title">Poster presentation at the Kempner Institute</span><span class="n-org">Learning Dynamics in Natural &amp; Artificial Intelligence</span></li>
 <li><span class="n-date">Aug 2026</span><span class="n-kind"><span class="pill k-poster">Poster</span></span><span class="n-title">Poster presentation at the NIH BRAIN Initiative Conference</span><span class="n-org">NIH BRAIN Initiative</span></li>
 <li><span class="n-date">Apr 2026</span><span class="n-kind"><span class="pill k-paper">Paper</span></span><span class="n-title"><a href="#papers">Power Laws in Empirical Eigenvalue Spectra</a></span><span class="n-org">Published in <em>Entropy</em> · co-first author</span></li>
+<li><span class="n-date">Mar 2026</span><span class="n-kind"><span class="pill k-talk">Talk</span></span><span class="n-title"><a href="#papers">Oral presentation at the APS Global Physics Summit</a></span><span class="n-org">American Physical Society</span></li>
 <li><span class="n-date">Mar 2026</span><span class="n-kind"><span class="pill k-award">Award</span></span><span class="n-title">Conference Travel Funding</span><span class="n-org">Student Government Association, Georgia Tech</span></li>
 <li><span class="n-date">Mar 2026</span><span class="n-kind"><span class="pill k-award">Award</span></span><span class="n-title">Travel Award</span><span class="n-org">School of Physics, Georgia Tech</span></li>
 <li><span class="n-date">Aug 2024</span><span class="n-kind"><span class="pill k-milestone">Milestone</span></span><span class="n-title">Started Ph.D. in Physics</span><span class="n-org">Georgia Institute of Technology</span></li>
@@ -272,6 +286,14 @@ footer i{font-family:var(--serif);font-size:13px;color:var(--sage)}
 <li><span class="t-term">Spring 2023</span><span class="t-course">Professional Issues in Biomedical Engineering <span>(BME 42-201/42-781)</span></span><span class="t-role">Teaching Assistant</span></li>
 </ul>
 </div>
+</div>
+</section>
+
+<section id="skills" aria-labelledby="skills-title">
+<h2 class="sec" id="skills-title">Technical skills</h2>
+<div class="skills">
+<div class="skill-row"><span class="lab">Programming</span><span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Scikit-learn</span><span class="tag">MATLAB</span><span class="tag">Linux</span><span class="tag">LaTeX</span></div>
+<div class="skill-row"><span class="lab">Neural data analysis</span><span class="tag">Calcium imaging</span><span class="tag">fMRI</span><span class="tag">Neuropixels</span><span class="tag">MEA</span></div>
 </div>
 </section>
 
@@ -329,23 +351,23 @@ footer i{font-family:var(--serif);font-size:13px;color:var(--sage)}
       pre: 'Liu, B.; ', me: 'Chen, Y.-Y.*', post: '; Li, M.S.; Morgan, V.T.; Abdelaleem, E.; Sederberg, A.',
       cite: 'Entropy 2026, 28, 418', note: '* co-first author',
       img: 'images/entropy_fig2.jpg', alt: 'Fig. 2: rank scaling, stability of fit, CCDF and selection of lambda-min on a toy model' },
-    { venue: 'KEMPNER', kind: 'Conference', year: '2026', linkLabel: 'Abstract', href: '',
+    { venue: 'KEMPNER', kind: 'Conference poster', year: '2026', linkLabel: 'Abstract', href: '',
       title: 'Criticality and Stereotypy Characterize Optimal Dynamical Regimes for Learning',
       pre: '', me: 'Yung-Ying Chen', post: ', Gordon B. Smith, Audrey Sederberg',
       cite: 'Learning Dynamics in Natural & Artificial Intelligence, Kempner Institute, Sep 2026', note: '',
       art: 'radial-gradient(ellipse 40% 14% at 30% 70%, rgba(222,206,170,0.95), transparent 70%), radial-gradient(ellipse 36% 12% at 72% 78%, rgba(226,170,150,0.85), transparent 70%), radial-gradient(ellipse 30% 18% at 60% 25%, rgba(150,173,180,0.85), transparent 70%), radial-gradient(ellipse 14% 10% at 20% 30%, rgba(255,255,255,0.95), transparent 70%), #D3DCCF' },
-    { venue: 'NIH BRAIN', kind: 'Conference', year: '2026', linkLabel: 'Abstract', href: '',
+    { venue: 'NIH BRAIN', kind: 'Conference poster', year: '2026', linkLabel: 'Abstract', href: '',
       title: 'Simple Origins of Complex Statistical Signatures in Neural Population Activities',
       pre: '', me: 'Yung-Ying Chen', post: ', Seongeun Chung, Benyuan Liu, Eslam Abdelaleem, Audrey Sederberg',
       cite: 'NIH BRAIN Initiative Conference, Aug 2026', note: '',
       art: 'radial-gradient(ellipse 45% 20% at 50% 40%, rgba(255,240,228,0.95), transparent 70%), radial-gradient(ellipse 30% 14% at 25% 70%, rgba(110,140,140,0.8), transparent 70%), radial-gradient(ellipse 26% 12% at 75% 72%, rgba(201,170,160,0.85), transparent 70%), radial-gradient(ellipse 12% 8% at 70% 30%, rgba(222,206,170,0.9), transparent 70%), #D2DCDD' },
-    { venue: 'APS', kind: 'Conference', year: '2026', linkLabel: 'Abstract', href: 'https://meetings-archive.aps.org/smt/2026/mar-m62/4/',
+    { venue: 'APS', kind: 'Oral presentation', year: '2026', linkLabel: 'Abstract', href: 'https://meetings-archive.aps.org/smt/2026/mar-m62/4/',
       title: 'Decoupling Stereotyped Dynamics from Criticality in Simple Neural Networks',
       pre: '', me: 'Yung-Ying Chen', post: ', Gordon B. Smith, Audrey J. Sederberg',
       cite: 'APS Global Physics Summit 2026, Mar 2026', note: '',
       art: 'radial-gradient(ellipse 30% 16% at 30% 35%, rgba(217,154,139,0.9), transparent 70%), radial-gradient(ellipse 34% 14% at 70% 65%, rgba(127,155,138,0.9), transparent 70%), radial-gradient(ellipse 12% 8% at 55% 45%, rgba(222,206,170,0.95), transparent 70%), radial-gradient(ellipse 10% 7% at 25% 70%, rgba(255,255,255,0.95), transparent 70%), radial-gradient(ellipse 20% 10% at 80% 25%, rgba(201,170,160,0.85), transparent 70%), #E6DACB' },
     { venue: 'MNRAS', kind: 'Journal', year: '2022', linkLabel: 'Paper', href: 'https://academic.oup.com/mnras/article/509/2/2258/6420258',
-      title: 'A simple numerical experiment on the dust temperature bias for Lyman break galaxies at z ∼ 5',
+      title: 'A simple numerical experiment on the dust temperature bias for Lyman break galaxies at z ≳ 5',
       pre: '', me: 'Chen, Y.-Y.', post: ', Hirashita, H., Wang, W.-H., & Nakai, N.',
       cite: 'Monthly Notices of the Royal Astronomical Society 509(2), 2258–2268, 2022', note: '',
       img: 'images/mnras_fig2.jpg', alt: 'Fig. 2: dust temperature versus infrared luminosity at z = 5, 7 and 10 for ALMA Bands 9, 7 and 6' },
